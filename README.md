@@ -1,19 +1,19 @@
-# Zafar Riza — Scientist · CEO · Builder
+# Zafar Riza — React + Tailwind Portfolio
 
-Premium static portfolio for GitHub Pages.
+Responsive public portfolio built with React, Vite, Tailwind CSS and JavaScript.
 
-## Includes
-- Scientist / CEO / Builder positioning
-- ZR PRODUCTIONS venture section
-- Projects & publications
-- AI, data, cloud, space and science capabilities
-- Learning highlights
-- Contact form using mailto
-- Responsive design
+The visual language is an original clean product design influenced by the clarity, spacing and responsive systems of Apple, Google Material and Microsoft Fluent.
+
+## Run
+npm install
+npm run dev
+npm run build
 
 ## GitHub Pages
-Enable **Settings → Pages → Deploy from a branch → main → /root**.
+Settings → Pages → Source → GitHub Actions. Vite is configured for /Portfolio/.
 
-Before publishing, replace the placeholder email `hello@example.com` in `script.js` with the real professional contact address.
+## Contact
+Replace hello@example.com in src/App.jsx with the professional address that should receive enquiries.
 
-The $100B figure is explicitly presented as an aspirational vision, not a claim of current net worth.
+## Brand usage
+NASA, UNICEF and WHO identifiers are protected marks. The site uses typographic identifiers for those organizations rather than reproducing protected emblems without permission.
