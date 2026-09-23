@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { ArrowUpRight, Menu, X, Mail, Sparkles, Cpu, Satellite, Globe2, HeartPulse, ExternalLink } from 'lucide-react';
-import { SiGoldmansachs, SiBankofamerica, SiGoogle, SiIbm, SiAmazonaws, SiOracle } from 'react-icons/si';
-
 const companies = [
-  ['Goldman Sachs', SiGoldmansachs, 'Internal Audit · Software Engineering'],
+  ['Goldman Sachs', null, 'Internal Audit · Software Engineering'],
   ['JPMorgan Chase & Co.', null, 'Software Engineering'],
-  ['Bank of America', SiBankofamerica, 'Investment Banking'],
+  ['Bank of America', null, 'Investment Banking'],
   ['Microsoft', null, 'Azure · Data Engineering'],
-  ['Google', SiGoogle, 'Project Management · Data'],
-  ['IBM', SiIbm, 'Data Science · AI'],
-  ['AWS', SiAmazonaws, 'Cloud'],
-  ['Oracle', SiOracle, 'Cloud']
+  ['Google', null, 'Project Management · Data'],
+  ['IBM', null, 'Data Science · AI'],
+  ['AWS', null, 'Cloud'],
+  ['Oracle', null, 'Cloud']
 ];
 
 const books = [
@@ -27,7 +25,8 @@ function ProtectedMark({ children, tone = 'dark' }) {
 
 function CompanyLogo({ Icon, name }) {
   if (Icon) return <Icon title={`${name} logo`} color="default" size={32} aria-label={`${name} logo`} />;
-  return <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-[9px] font-bold tracking-[-.04em] text-white" aria-label={`${name} logo`}>JPM</span>;
+  const mark = name === "Goldman Sachs" ? "GS" : name === "Bank of America" ? "BofA" : name === "Microsoft" ? "MS" : name === "Google" ? "G" : name === "IBM" ? "IBM" : name === "AWS" ? "AWS" : name === "Oracle" ? "ORCL" : "JPM";
+  return <span className="flex h-8 min-w-8 items-center justify-center rounded-lg bg-slate-900 px-1.5 text-[9px] font-bold tracking-[-.04em] text-white" aria-label={`${name} logo mark`}>{mark}</span>;
 }
 
 export default function App() {
