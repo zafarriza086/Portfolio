@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { ArrowUpRight, Menu, X, Mail, Sparkles, Cpu, Satellite, Globe2, HeartPulse, ExternalLink } from 'lucide-react';
+import { SiGoldmansachs, SiBankofamerica, SiMicrosoft, SiGoogle, SiIbm, SiAmazonaws, SiOracle } from '@icons-pack/react-simple-icons';
 
-const logo = (slug) => `https://cdn.simpleicons.org/${slug}`;
 const companies = [
-  ['Goldman Sachs','goldmansachs','Internal Audit · Software Engineering'],
-  ['JPMorgan Chase & Co.','jpmorganchase','Software Engineering'],
-  ['Bank of America','bankofamerica','Investment Banking'],
-  ['Microsoft','microsoft','Azure · Data Engineering'],
-  ['Google','google','Project Management · Data'],
-  ['IBM','ibm','Data Science · AI'],
-  ['AWS','amazonwebservices','Cloud'],
-  ['Oracle','oracle','Cloud']
+  ['Goldman Sachs', SiGoldmansachs, 'Internal Audit · Software Engineering'],
+  ['JPMorgan Chase & Co.', null, 'Software Engineering'],
+  ['Bank of America', SiBankofamerica, 'Investment Banking'],
+  ['Microsoft', SiMicrosoft, 'Azure · Data Engineering'],
+  ['Google', SiGoogle, 'Project Management · Data'],
+  ['IBM', SiIbm, 'Data Science · AI'],
+  ['AWS', SiAmazonaws, 'Cloud'],
+  ['Oracle', SiOracle, 'Cloud']
 ];
 
 const books = [
@@ -25,8 +25,9 @@ function ProtectedMark({ children, tone = 'dark' }) {
   return <div className={`protected-mark ${tone}`}>{children}</div>;
 }
 
-function CompanyLogo({ slug, name }) {
-  return <img src={logo(slug)} alt={`${name} logo`} className="h-8 w-8 object-contain" loading="lazy" />;
+function CompanyLogo({ Icon, name }) {
+  if (Icon) return <Icon title={`${name} logo`} color="default" size={32} aria-label={`${name} logo`} />;
+  return <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-[9px] font-bold tracking-[-.04em] text-white" aria-label={`${name} logo`}>JPM</span>;
 }
 
 export default function App() {
@@ -82,10 +83,10 @@ export default function App() {
         <p className="text-[10px] font-semibold tracking-[.22em] text-violet-600">02 / EXPERIENCE</p><h2 className="mt-5 text-4xl font-semibold tracking-[-.055em] sm:text-6xl lg:text-7xl">Experience &<br/><span className="font-serif font-normal text-violet-600">recognition.</span></h2>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-14">
           <article className="rounded-[2rem] bg-[#090b10] p-7 text-white sm:p-8"><ProtectedMark>NASA</ProtectedMark><span className="mt-6 inline-block text-[9px] tracking-[.16em] text-cyan-200">STEM ENGAGEMENT PROGRAMME</span><h3 className="mt-4 text-2xl font-semibold">Artificial Developer in Satellites in Artemis Missions</h3><p className="mt-4 text-sm leading-7 text-slate-400">Portfolio role description supplied by Zafar Riza. NASA's Office of STEM Engagement provides STEM opportunities connected to aerospace education and careers.</p><a className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-cyan-200" href="https://www.nasa.gov/learning-resources/stem-engagement/" target="_blank" rel="noreferrer">NASA STEM Engagement <ExternalLink size={13}/></a></article>
-          {companies.slice(0,3).map(([n,m,d])=><article key={n} className="rounded-[2rem] border bg-white p-7 shadow-sm sm:p-8"><div className="flex items-center gap-4"><CompanyLogo slug={m} name={n}/><div><h3 className="font-semibold">{n}</h3><p className="text-xs text-slate-500">{d}</p></div></div><p className="mt-8 border-t pt-6 text-sm leading-7 text-slate-600">{n==='Goldman Sachs'?'Internal Audit and Software Engineering virtual experiences: internal controls, compliance risk, cybersecurity governance and password-hashing analysis.':n.includes('JPMorgan')?'Software Engineering virtual experience: development environments, repository troubleshooting and real-time financial-data visualization.':'Investment Banking virtual experience: acquisition analysis using SWOT, DCF valuation and sensitivity analysis.'}</p></article>)}
+          {companies.slice(0,3).map(([n,Icon,d])=><article key={n} className="rounded-[2rem] border bg-white p-7 shadow-sm sm:p-8"><div className="flex items-center gap-4"><CompanyLogo Icon={Icon} name={n}/><div><h3 className="font-semibold">{n}</h3><p className="text-xs text-slate-500">{d}</p></div></div><p className="mt-8 border-t pt-6 text-sm leading-7 text-slate-600">{n==='Goldman Sachs'?'Internal Audit and Software Engineering virtual experiences: internal controls, compliance risk, cybersecurity governance and password-hashing analysis.':n.includes('JPMorgan')?'Software Engineering virtual experience: development environments, repository troubleshooting and real-time financial-data visualization.':'Investment Banking virtual experience: acquisition analysis using SWOT, DCF valuation and sensitivity analysis.'}</p></article>)}
         </div>
         <h3 className="mt-16 text-sm font-semibold tracking-[.15em] text-slate-500 sm:mt-20">TECHNOLOGY & LEARNING ECOSYSTEM</h3>
-        <div className="mt-5 grid grid-cols-1 gap-3 xs:grid-cols-2 sm:grid-cols-4">{companies.slice(3).map(([n,m,d])=><div key={n} className="flex items-center gap-3 rounded-2xl border bg-white p-4"><CompanyLogo slug={m} name={n}/><div><div className="text-xs font-semibold">{n}</div><div className="text-[10px] text-slate-400">{d}</div></div></div>)}</div>
+        <div className="mt-5 grid grid-cols-1 gap-3 xs:grid-cols-2 sm:grid-cols-4">{companies.slice(3).map(([n,Icon,d])=><div key={n} className="flex items-center gap-3 rounded-2xl border bg-white p-4"><CompanyLogo slug={m} name={n}/><div><div className="text-xs font-semibold">{n}</div><div className="text-[10px] text-slate-400">{d}</div></div></div>)}</div>
       </section>
 
       <section id="service" className="border-y bg-white"><div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
