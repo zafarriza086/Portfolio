@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { ArrowUpRight, Menu, X, Mail, Sparkles, Cpu, Satellite, Globe2, HeartPulse, ExternalLink } from 'lucide-react';
-import { SiGoldmansachs, SiBankofamerica, SiGoogle, SiIbm, SiAmazonaws, SiOracle } from '@icons-pack/react-simple-icons';
+import { SiGoldmansachs, SiBankofamerica, SiGoogle, SiIbm, SiAmazonaws, SiOracle, SiMicrosoft } from 'react-icons/si';
 
 const companies = [
   ['Goldman Sachs', SiGoldmansachs, 'Internal Audit · Software Engineering'],
   ['JPMorgan Chase & Co.', null, 'Software Engineering'],
   ['Bank of America', SiBankofamerica, 'Investment Banking'],
-  ['Microsoft', null, 'Azure · Data Engineering'],
+  ['Microsoft', SiMicrosoft, 'Azure · Data Engineering'],
   ['Google', SiGoogle, 'Project Management · Data'],
   ['IBM', SiIbm, 'Data Science · AI'],
   ['AWS', SiAmazonaws, 'Cloud'],
