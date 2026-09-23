@@ -1,0 +1,1 @@
+function sendMail(e){e.preventDefault();const n=document.getElementById('name').value.trim(),m=document.getElementById('message').value.trim(),em=document.getElementById('email').value.trim();const to='hello@example.com';location.href='mailto:'+to+'?subject='+encodeURIComponent('Portfolio enquiry from '+n)+'&body='+encodeURIComponent('Name: '+n+'\nEmail: '+em+'\n\n'+m)}
