@@ -1,1 +1,11 @@
-@import "tailwindcss";@theme{--font-sans:Inter,ui-sans-serif,system-ui,sans-serif}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}.brand{display:flex;height:42px;min-width:76px;width:max-content;align-items:center;justify-content:center;border-radius:12px;padding:0 14px;font-weight:800;letter-spacing:.06em;font-size:13px}.nasa{background:#0b3d91;color:#fff}.unicef{background:#1cabe2;color:#fff}.who{background:#0093d5;color:#fff}.meer{background:linear-gradient(135deg,#6d4aff,#ff5bbd);color:#fff}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@import "tailwindcss";
+@theme{--font-sans:Inter,ui-sans-serif,system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:#f7f8fa}
+*{box-sizing:border-box}
+img{max-width:100%}
+.protected-mark{display:flex;height:42px;min-width:76px;width:max-content;align-items:center;justify-content:center;border-radius:12px;padding:0 14px;font-weight:800;letter-spacing:.06em;font-size:13px}
+.protected-mark.dark{background:#0b3d91;color:#fff}
+.protected-mark.blue{background:#eaf7fc;color:#0077b6;border:1px solid #b9e7f5}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media(max-width:380px){.protected-mark{font-size:11px;padding:0 11px}.tracking-\[\.18em\]{letter-spacing:.1em}}
